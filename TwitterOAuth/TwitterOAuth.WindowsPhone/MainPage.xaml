@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="StrawhatNet.TwitterOAuth.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StrawhatNet.TwitterOAuth"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Page.Resources>
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+            <Button Content="Get Request Token" x:Name="GetRequestTokenButton"
+                    Click="GetRequestTokenButton_Click"
+                    Style="{StaticResource MyButtonStyle}"/>
+            <Button Content="Redirect To Auth" x:Name="RedirectToAuthButton"
+                    Click="RedirectToAuthButton_Click"
+                    Style="{StaticResource MyButtonStyle}"/>
+            <Button Content="Get Access Token" x:Name="GetAccessTokenButton"
+                    Click="GetAccessTokenButton_Click"
+                    Style="{StaticResource MyButtonStyle}"/>
+            <Button Content="Update State" x:Name="UpdateStateButton"
+                    Click="UpdateStateButton_Click"
+                    Style="{StaticResource MyButtonStyle}"/>
+        </StackPanel>
+        <TextBox x:Name="TweetTextBox" Grid.Row="1"
+                 AcceptsReturn="True"
+                 VerticalAlignment="Stretch"/>
+        <TextBox x:Name="LogTextBox" Grid.Row="3"
+                 IsReadOnly="True" AcceptsReturn="True"
+                 VerticalAlignment="Stretch" TextWrapping="Wrap"/>
+        
+    </Grid>
+</Page>
